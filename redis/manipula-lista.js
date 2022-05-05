@@ -4,7 +4,7 @@ module.exports = lista => {
     const setAsync = promisify(lista.set).bind(lista);
     const existsAsync = promisify(lista.exists).bind(lista);
     const getAsync = promisify(lista.get).bind(lista);
-    const delAsync = promisify(lista.get).bind(lista);
+    const delAsync = promisify(lista.delete).bind(lista);
 
     return {
         async adiciona(chave, valor, dataExpiracao) {
