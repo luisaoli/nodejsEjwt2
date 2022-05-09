@@ -73,4 +73,11 @@ module.exports = {
 
     }
   },
+
+  async verificacaoEmail(req, res, next) {
+    const { id } = req.params;
+    const usuario = await Usuario.buscaPorId(id);
+    req.user = usuario;
+    next();
+  },
 };
